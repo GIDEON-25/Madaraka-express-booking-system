@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Advanced Railway Management System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="header">
+🚆 Advanced Railway Management System
+</div>
+
+<div class="container">
+
+<!-- BOOKING PAGE -->
+
+<div id="bookingPage" class="card">
+
+<h2>Train Ticket Booking</h2>
+
+<input id="name" placeholder="Passenger Name">
+<input id="age" type="number" placeholder="Age">
+
+<select id="gender">
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<select id="train">
+<option value="Express-1">Express Train 1</option>
+<option value="Express-2">Express Train 2</option>
+<option value="Metro-3">Metro Train 3</option>
+</select>
+
+<select id="classType">
+<option value="First">First Class</option>
+<option value="Second">Second Class</option>
+<option value="Economy">Economy</option>
+</select>
+
+<input id="from" placeholder="From Station">
+<input id="to" placeholder="To Station">
+<input id="date" type="date">
+
+<button class="primary" onclick="bookTicket()">Book Ticket</button>
+<button class="secondary" onclick="showAdminLogin()">Admin Login</button>
+
+<h3>Seat Availability</h3>
+<p id="seatInfo"></p>
+
+</div>
+
+
+<!-- LOGIN PAGE -->
+
+<div id="loginPage" class="card hide">
+
+<h2>Admin Login</h2>
+
+<input id="adminUser" placeholder="Username">
+<input id="adminPass" type="password" placeholder="Password">
+
+<button class="primary" onclick="adminLogin()">Login</button>
+<button class="secondary" onclick="showBooking()">Back</button>
+
+
+
+</div>
+
+
+<!-- ADMIN DASHBOARD -->
+
+<div id="adminPage" class="card hide">
+
+<h2>Admin Dashboard</h2>
+
+<div class="actions">
+
+<button onclick="showBooking()">Logout</button>
+<button onclick="exportExcel()">Export Excel</button>
+<button onclick="printReport()">Print Report</button>
+<button onclick="clearAll()">Clear All</button>
+
+</div>
+
+<input id="search" placeholder="Search Ticket ID or Name" onkeyup="loadTickets()">
+
+<table id="ticketTable">
+
+<tr>
+<th>Ticket ID</th>
+<th>Name</th>
+<th>Train</th>
+<th>Class</th>
+<th>From</th>
+<th>To</th>
+<th>Date</th>
+<th>Fare</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
